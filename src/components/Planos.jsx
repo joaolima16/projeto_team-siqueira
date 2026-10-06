@@ -23,7 +23,7 @@ const planos = [
 
     preco: 249,
     desc: 'Acompanhamento próximo e correção de execução.',
-    periodo: '12 semanas',
+    periodo: '6 semanas',
     itens: [
       'Tudo do Plano Bronze',
       'Suporte via WhatsApp',
@@ -53,7 +53,7 @@ export default function Planos({ onEscolherPlano }) {
         <div className="sec-head">
           <div className="sec-label">Planos</div>
           <h2>Escolha o acompanhamento ideal para o seu objetivo </h2>
-          <p>Três caminhos. Um objetivo: resultado real e sustentável.</p>
+          <p>Um objetivo: resultado real e sustentável.</p>
         </div>
         <div className="planos-grid">
           {planos.map((p) => (
@@ -62,7 +62,7 @@ export default function Planos({ onEscolherPlano }) {
               <div className="plano-nome">{p.tipo}</div>
               <div className="plano-tipo">{p.nome}</div>
               <div className="plano-periodo">{p.periodo}</div>
-              <div className="plano-preco">R$ {p.preco}<span> a cada 6 semanas</span></div>
+              <div className="plano-preco">R$ {p.preco}<span> a {p.periodo}</span></div>
               <ul className="plano-lista">
                 {p.itens.map((item) => <li key={item}>{item}</li>)}
               </ul>

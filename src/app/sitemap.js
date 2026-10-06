@@ -1,19 +1,25 @@
-export default function sitemap() {
-  const baseUrl = 'https://www.teamsiqueira.com'
-  const now = new Date()
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.teamsiqueira.com').replace(/\/$/, '')
 
-  return [
-    {
-      url: baseUrl,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/depoimentos`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-  ]
+const routes = [
+  {
+    path: '/',
+    changeFrequency: 'weekly',
+    priority: 1,
+  },
+  {
+    path: '/depoimentos',
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  },
+]
+
+export default function sitemap() {
+  const lastModified = new Date()
+
+  return routes.map(({ path, changeFrequency, priority }) => ({
+    url: `${siteUrl}${path === '/' ? '' : path}`,
+    lastModified,
+    changeFrequency,
+    priority,
+  }))
 }
