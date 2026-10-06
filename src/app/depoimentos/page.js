@@ -10,6 +10,9 @@ export const metadata = {
   title: 'Depoimentos',
   description:
     'Veja todas as evoluções reais de alunos do Team Siqueira: resultados de emagrecimento, hipertrofia e preparação para competição.',
+  alternates: {
+    canonical: '/depoimentos',
+  },
   openGraph: {
     title: 'Depoimentos | Team Siqueira',
     description:
@@ -31,6 +34,7 @@ export const metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
+  '@id': 'https://www.teamsiqueira.com/depoimentos/#collection',
   name: 'Depoimentos - Team Siqueira',
   description: 'Evoluções reais de alunos do Team Siqueira',
   url: 'https://www.teamsiqueira.com/depoimentos',

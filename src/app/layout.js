@@ -22,6 +22,9 @@ export const metadata = {
   authors: [{ name: 'Team Siqueira' }],
   creator: 'Daniel Siqueira',
   publisher: 'Team Siqueira',
+  alternates: {
+    canonical: '/',
+  },
   formatDetection: {
     email: false,
     address: false,
